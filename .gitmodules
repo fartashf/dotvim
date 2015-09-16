@@ -22,9 +22,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
-[submodule "bundle/pep8"]
-	path = bundle/pep8
-	url = https://github.com/vim-scripts/pep8.git
 [submodule "bundle/pydoc"]
 	path = bundle/pydoc
 	url = https://github.com/fs111/pydoc.vim.git
@@ -67,3 +64,6 @@
 [submodule "bundle/flake8"]
 	path = bundle/flake8
 	url = https://github.com/nvie/vim-flake8
+[submodule "command-t"]
+	path = command-t
+	url = ./bundle/command-t/
