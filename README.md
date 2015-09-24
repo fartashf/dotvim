@@ -1,5 +1,5 @@
-How to install
-==============
+# Fartash's .vimrc
+## How to install
 cd ~/
 git clone --recursive git://github.com/fartashf/dotvim.git .vim
 cd .vim/
