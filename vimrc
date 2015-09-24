@@ -82,7 +82,7 @@ set relativenumber
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=80
+set colorcolumn=+1
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -140,3 +140,8 @@ map <leader>8 :SyntasticCheck<CR>
 map <leader>e :Errors<CR>
 let g:syntastic_auto_jump=3
 map <leader>A :!autopep8 --in-place %<CR>
+map <leader>y my{v}"+y`y
+map <leader>p {v}"+p
+" if &diff
+"     let g:pymode_folding=0
+" endif
