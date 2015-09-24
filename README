@@ -1,1 +1,6 @@
-git clone --recursive git://github.com/foo/bar.git
+How to install
+==============
+cd ~/
+git clone --recursive git://github.com/fartashf/dotvim.git .vim
+cd .vim/
+./install.sh
