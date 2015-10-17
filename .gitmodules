@@ -30,7 +30,7 @@
 	url = https://github.com/alfredodeza/pytest.vim.git
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
-	url = https://github.com/klen/python-mode
+	url = https://github.com/fartashf/python-mode
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = https://github.com/garbas/vim-snipmate
