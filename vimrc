@@ -82,16 +82,16 @@ set relativenumber
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=80
+set colorcolumn=+1
 
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 " nnoremap j gj
 " nnoremap k gk
 
@@ -140,3 +140,33 @@ map <leader>8 :SyntasticCheck<CR>
 map <leader>e :Errors<CR>
 let g:syntastic_auto_jump=3
 map <leader>A :!autopep8 --in-place %<CR>
+map <leader>y my{v}"+y`y
+map <leader>p {v}"+p
+" if &diff
+"     let g:pymode_folding=0
+" endif
+
+function! s:Copy2IPython()
+    let l:save_cursor = getpos('.')
+    normal! {
+    let start_line = line(".")
+    normal! }
+    let end_line = line(".")
+    if getline(start_line) =~ '^\s*$' && start_line != cur_line
+        let start_line = start_line + 1
+    endif
+    if getline(end_line) =~ '^\s*$' && end_line != cur_line
+        let end_line = end_line - 1
+    endif
+    if ! ( start_line <= cur_line && cur_line <= end_line)
+        echo "Not a block"
+    endif 
+    " normal! 
+    call setpos('.', l:save_cursor)
+    " "+y`y
+endfunction
+
+" map <leader>y :Copy2IPython()<CR>
+let g:syntastic_python_flake8_exec = '~/.local/bin/flake8'
+let g:syntastic_python_pep8_exec = '~/.local/bin/pep8'
+let g:syntastic_python_pylint_exec = '~/.local/bin/pylint'
