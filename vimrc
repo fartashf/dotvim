@@ -82,7 +82,7 @@ set number
 
 set wrap
 set textwidth=79
-set formatoptions=qrn1
+set formatoptions=qrn1tc
 set colorcolumn=+1
 
 " nnoremap <up> <nop>
@@ -171,3 +171,4 @@ endfunction
 let g:syntastic_python_flake8_exec = '~/.local/bin/flake8'
 let g:syntastic_python_pep8_exec = '~/.local/bin/pep8'
 let g:syntastic_python_pylint_exec = '~/.local/bin/pylint'
+set tw=79
