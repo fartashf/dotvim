@@ -172,3 +172,4 @@ let g:syntastic_python_flake8_exec = '~/.local/bin/flake8'
 let g:syntastic_python_pep8_exec = '~/.local/bin/pep8'
 let g:syntastic_python_pylint_exec = '~/.local/bin/pylint'
 set tw=79
+let g:pymode_options_max_line_length = 79
