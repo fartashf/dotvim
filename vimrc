@@ -100,8 +100,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+autocmd FileType python set list
+autocmd FileType python set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 nmap <leader>a <Esc>:Ack!
 map <leader>u :GundoToggle<CR>
@@ -173,3 +173,7 @@ let g:syntastic_python_pep8_exec = '~/.local/bin/pep8'
 let g:syntastic_python_pylint_exec = '~/.local/bin/pylint'
 set tw=79
 let g:pymode_options_max_line_length = 79
+
+set foldenable
+autocmd FileType c,cpp,h,hpp setlocal foldmethod=syntax
+let g:syntastic_cpp_remove_include_errors = 1
