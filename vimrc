@@ -100,26 +100,11 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-autocmd FileType python set list
-autocmd FileType python set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 nmap <leader>a <Esc>:Ack!
 map <leader>u :GundoToggle<CR>
 map <leader>n :NERDTreeToggle<CR>
 map <leader>td <Plug>TaskList
-" To work with syntastic
-let g:pymode_lint=0
-" let g:pymode_lint_write=0
-" map <leader>8 :PymodeLint<CR>
-" map <leader>A :PymodeLintAuto<CR>
-
-" pymode
-" Don't look up if you don't find .ropeproject. Run :PymodeRopeNewProject
-" autocomplete with pymode is slow and with ropevim there is a bug when you
-" remove all chars until the dot.
-let g:pymode_rope = 0
-let g:pymode_rope_lookup_project = 0
-" autocmd FileType python set omnifunc=RopeCompleteFunc
 " let ropevim_vim_completion=1
 " let ropevim_extended_complete=1
 " autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -140,40 +125,11 @@ let g:syntastic_check_on_wq = 0
 map <leader>8 :SyntasticCheck<CR>
 map <leader>e :Errors<CR>
 let g:syntastic_auto_jump=3
-map <leader>A :!autopep8 --in-place %<CR>
 map <leader>y my{v}"+y`y
 map <leader>p {v}"+p
-" if &diff
-"     let g:pymode_folding=0
-" endif
-
-function! s:Copy2IPython()
-    let l:save_cursor = getpos('.')
-    normal! {
-    let start_line = line(".")
-    normal! }
-    let end_line = line(".")
-    if getline(start_line) =~ '^\s*$' && start_line != cur_line
-        let start_line = start_line + 1
-    endif
-    if getline(end_line) =~ '^\s*$' && end_line != cur_line
-        let end_line = end_line - 1
-    endif
-    if ! ( start_line <= cur_line && cur_line <= end_line)
-        echo "Not a block"
-    endif 
-    " normal! 
-    call setpos('.', l:save_cursor)
-    " "+y`y
-endfunction
-
-" map <leader>y :Copy2IPython()<CR>
-let g:syntastic_python_flake8_exec = '~/.local/bin/flake8'
-let g:syntastic_python_pep8_exec = '~/.local/bin/pep8'
-let g:syntastic_python_pylint_exec = '~/.local/bin/pylint'
-set tw=79
-let g:pymode_options_max_line_length = 79
 
 set foldenable
 autocmd FileType c,cpp,h,hpp setlocal foldmethod=syntax
 let g:syntastic_cpp_remove_include_errors = 1
+
+let g:tex_flavor = 'latex'
