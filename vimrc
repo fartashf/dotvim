@@ -133,3 +133,5 @@ autocmd FileType c,cpp,h,hpp setlocal foldmethod=syntax
 let g:syntastic_cpp_remove_include_errors = 1
 
 let g:tex_flavor = 'latex'
+
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
