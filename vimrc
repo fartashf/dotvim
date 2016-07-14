@@ -55,6 +55,7 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
+let g:pathogen_disabled = ['command-t']
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -135,3 +136,11 @@ let g:syntastic_cpp_remove_include_errors = 1
 let g:tex_flavor = 'latex'
 
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+" nnoremap <silent> <F8> :TlistToggle<CR>
+map <leader>t :TlistToggle<CR>
+" let Tlist_Display_Prototype = 1
+let Tlist_Display_Tag_Scope = 0
+let Tlist_Max_Tag_Length = 20
+" let Tlist_WinWidth = 40
+let tlist_cpp_ctags_args = '--fields=+S'
