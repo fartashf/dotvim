@@ -144,3 +144,5 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " let Tlist_Max_Tag_Length = 20
 " " let Tlist_WinWidth = 40
 " let tlist_cpp_ctags_args = '--fields=+S'
+
+nmap <leader>t :TagbarToggle<CR>
