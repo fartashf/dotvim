@@ -123,6 +123,9 @@ set completeopt=menuone,longest,preview
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:loaded_syntastic_python_pylint_checker = 0
+let g:loaded_syntastic_python_pep8_checker = 0
+" let g:loaded_syntastic_python_flake8_checker = 0
 map <leader>8 :SyntasticCheck<CR>
 map <leader>e :Errors<CR>
 let g:syntastic_auto_jump=3
